@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="/static/css/main.css">
+</head>
+<body>
+    <h2>Prediction Result</h2>
+
+    {% if top_3 %}
+        <img src="/{{ image_path }}" alt="Uploaded Image" style="max-width:300px;">
+        <h3>Top 3 Predictions:</h3>
+        <ul>
+            {% for label, confidence in top_3 %}
+                <li><strong>{{ label }}</strong> — {{ confidence }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No image uploaded.</p>
+    {% endif %}
+
+    <a href="/classification">← Try Another</a>
+</body>
+</html>

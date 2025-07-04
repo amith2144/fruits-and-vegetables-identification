@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload for Classification</title>
+    <link rel="stylesheet" href="/static/css/main.css">
+</head>
+<body>
+    <h2>Upload an Image</h2>
+
+    <form id="uploadForm" action="/predict" method="POST" enctype="multipart/form-data">
+        <input type="file" name="image" id="imageInput" accept="image/*" required>
+        <br><br>
+        <img id="preview" src="#" alt="Preview" style="max-width: 300px; display: none;">
+        <br>
+        <button type="submit">Predict</button>
+    </form>
+
+    <script src="/static/js/main.js"></script>
+    <a href="/">← Back</a>
+</body>
+</html>
